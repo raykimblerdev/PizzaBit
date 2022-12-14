@@ -4,9 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>PixelatedPusab</string>
-		<string>Blocktopia</string>
-		<string>IsWasted</string>
+		<string>PixelatedPusab.ttf</string>
+		<string>Blocktopia.ttf</string>
+		<string>IsWasted.tff</string>
 	</array>
 </dict>
 </plist>

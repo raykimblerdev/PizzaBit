@@ -45,6 +45,7 @@ class ChefSprite: SKSpriteNode {
         super.init(texture: nil, color: .clear, size: CGSize(width: 64, height: 64))
         createIdleAnimation()
         self.run(idleAnimation)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

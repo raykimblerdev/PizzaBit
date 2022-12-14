@@ -21,6 +21,13 @@
 		0C5EB8462949CFB10092ECA6 /* Blocktopia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EB8432949CFB10092ECA6 /* Blocktopia.ttf */; };
 		0C5EB8472949CFB10092ECA6 /* IsWasted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EB8442949CFB10092ECA6 /* IsWasted.ttf */; };
 		0C5EB84A2949D4D10092ECA6 /* ChefSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EB8492949D4D10092ECA6 /* ChefSprite.swift */; };
+		0C951361294A127F002C7498 /* Pizza_Easy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C95135E294A127E002C7498 /* Pizza_Easy.wav */; };
+		0C951362294A127F002C7498 /* PERFECTIONIST.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C95135F294A127F002C7498 /* PERFECTIONIST.wav */; };
+		0C951364294A247E002C7498 /* HitZoneSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C951363294A247E002C7498 /* HitZoneSprite.swift */; };
+		0C951366294A2A20002C7498 /* Pizza_Medium.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C951365294A2A20002C7498 /* Pizza_Medium.wav */; };
+		0C95136F294A3D2A002C7498 /* The Greatest Chef.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C95136E294A3D2A002C7498 /* The Greatest Chef.wav */; };
+		0C951371294A60DD002C7498 /* Lost but not defeated.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C951370294A60DD002C7498 /* Lost but not defeated.wav */; };
+		0C951373294A6147002C7498 /* Aube Is A Chef!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C951372294A6147002C7498 /* Aube Is A Chef!.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +35,6 @@
 		0C5EB8102949C1920092ECA6 /* PizzaBitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaBitApp.swift; sourceTree = "<group>"; };
 		0C5EB8122949C1920092ECA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0C5EB8172949C1930092ECA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0C5EB8202949C1CD0092ECA6 /* PERFECTIONIST.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PERFECTIONIST.mp3; sourceTree = "<group>"; };
-		0C5EB8212949C1CD0092ECA6 /* Pizza Easy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pizza Easy.wav"; sourceTree = "<group>"; };
-		0C5EB8222949C1CD0092ECA6 /* Pizza Medium.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pizza Medium.wav"; sourceTree = "<group>"; };
-		0C5EB8232949C1CD0092ECA6 /* PERFECTIONIST.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PERFECTIONIST.wav; sourceTree = "<group>"; };
 		0C5EB8292949C1D60092ECA6 /* IngredientSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientSprite.swift; sourceTree = "<group>"; };
 		0C5EB8302949C1D60092ECA6 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		0C5EB8312949C1D60092ECA6 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
@@ -43,6 +46,13 @@
 		0C5EB8432949CFB10092ECA6 /* Blocktopia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Blocktopia.ttf; sourceTree = "<group>"; };
 		0C5EB8442949CFB10092ECA6 /* IsWasted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IsWasted.ttf; sourceTree = "<group>"; };
 		0C5EB8492949D4D10092ECA6 /* ChefSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefSprite.swift; sourceTree = "<group>"; };
+		0C95135E294A127E002C7498 /* Pizza_Easy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pizza_Easy.wav; sourceTree = "<group>"; };
+		0C95135F294A127F002C7498 /* PERFECTIONIST.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PERFECTIONIST.wav; sourceTree = "<group>"; };
+		0C951363294A247E002C7498 /* HitZoneSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitZoneSprite.swift; sourceTree = "<group>"; };
+		0C951365294A2A20002C7498 /* Pizza_Medium.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pizza_Medium.wav; sourceTree = "<group>"; };
+		0C95136E294A3D2A002C7498 /* The Greatest Chef.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "The Greatest Chef.wav"; sourceTree = "<group>"; };
+		0C951370294A60DD002C7498 /* Lost but not defeated.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Lost but not defeated.wav"; sourceTree = "<group>"; };
+		0C951372294A6147002C7498 /* Aube Is A Chef!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Aube Is A Chef!.wav"; sourceTree = "<group>"; };
 		B39213BF2949EDBE00A397A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,27 +110,15 @@
 		0C5EB81E2949C1CD0092ECA6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0C95135C294A126B002C7498 /* OST */,
 				0C5EB8412949CFB10092ECA6 /* Fonts */,
-				0C5EB81F2949C1CD0092ECA6 /* OST */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		0C5EB81F2949C1CD0092ECA6 /* OST */ = {
-			isa = PBXGroup;
-			children = (
-				0C5EB8202949C1CD0092ECA6 /* PERFECTIONIST.mp3 */,
-				0C5EB8212949C1CD0092ECA6 /* Pizza Easy.wav */,
-				0C5EB8222949C1CD0092ECA6 /* Pizza Medium.wav */,
-				0C5EB8232949C1CD0092ECA6 /* PERFECTIONIST.wav */,
-			);
-			path = OST;
 			sourceTree = "<group>";
 		};
 		0C5EB8282949C1D60092ECA6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0C5EB8302949C1D60092ECA6 /* AudioManager.swift */,
 				0C5EB8312949C1D60092ECA6 /* GameOverScene.swift */,
 				0C5EB8322949C1D60092ECA6 /* GameScene.swift */,
 				0C5EB8332949C1D60092ECA6 /* MenuScene.swift */,
@@ -143,8 +141,23 @@
 			children = (
 				0C5EB8292949C1D60092ECA6 /* IngredientSprite.swift */,
 				0C5EB8492949D4D10092ECA6 /* ChefSprite.swift */,
+				0C951363294A247E002C7498 /* HitZoneSprite.swift */,
+				0C5EB8302949C1D60092ECA6 /* AudioManager.swift */,
 			);
 			path = Sprites;
+			sourceTree = "<group>";
+		};
+		0C95135C294A126B002C7498 /* OST */ = {
+			isa = PBXGroup;
+			children = (
+				0C951372294A6147002C7498 /* Aube Is A Chef!.wav */,
+				0C95136E294A3D2A002C7498 /* The Greatest Chef.wav */,
+				0C951370294A60DD002C7498 /* Lost but not defeated.wav */,
+				0C95135F294A127F002C7498 /* PERFECTIONIST.wav */,
+				0C951365294A2A20002C7498 /* Pizza_Medium.wav */,
+				0C95135E294A127E002C7498 /* Pizza_Easy.wav */,
+			);
+			path = OST;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +219,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C5EB8462949CFB10092ECA6 /* Blocktopia.ttf in Resources */,
+				0C951361294A127F002C7498 /* Pizza_Easy.wav in Resources */,
+				0C951366294A2A20002C7498 /* Pizza_Medium.wav in Resources */,
+				0C951373294A6147002C7498 /* Aube Is A Chef!.wav in Resources */,
 				0C5EB8402949C2590092ECA6 /* Assets.xcassets in Resources */,
+				0C95136F294A3D2A002C7498 /* The Greatest Chef.wav in Resources */,
+				0C951371294A60DD002C7498 /* Lost but not defeated.wav in Resources */,
+				0C951362294A127F002C7498 /* PERFECTIONIST.wav in Resources */,
 				0C5EB8472949CFB10092ECA6 /* IsWasted.ttf in Resources */,
 				0C5EB8452949CFB10092ECA6 /* PixelatedPusab.ttf in Resources */,
 				0C5EB8182949C1930092ECA6 /* Preview Assets.xcassets in Resources */,
@@ -224,6 +243,7 @@
 				0C5EB83B2949C1D60092ECA6 /* GameScene.swift in Sources */,
 				0C5EB83A2949C1D60092ECA6 /* GameOverScene.swift in Sources */,
 				0C5EB83E2949C1DE0092ECA6 /* IngredientModel.swift in Sources */,
+				0C951364294A247E002C7498 /* HitZoneSprite.swift in Sources */,
 				0C5EB8342949C1D60092ECA6 /* IngredientSprite.swift in Sources */,
 				0C5EB83C2949C1D60092ECA6 /* MenuScene.swift in Sources */,
 				0C5EB8132949C1920092ECA6 /* ContentView.swift in Sources */,

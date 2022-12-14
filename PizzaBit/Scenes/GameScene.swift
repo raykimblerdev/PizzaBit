@@ -17,7 +17,8 @@ class GameScene: SKScene {
     var buttonMozzarella = SKSpriteNode(imageNamed: "0mozzarella")
     var buttonBasil = SKSpriteNode(imageNamed: "0basil")
     var buttonOil = SKSpriteNode(imageNamed: "0oil")
-    var clickIndicator = SKLabelNode(text: "click here!")
+    var flow = SKSpriteNode(imageNamed: "flow")
+    var clickIndicator = HitZoneSprite()
     var livesIndicator = SKLabelNode()
     var pointsLabel = SKLabelNode()
     var ingredientArray: [SKNode] = []
@@ -30,6 +31,9 @@ class GameScene: SKScene {
     var lives: Int = 3
     var beat: Double
     var bar: Double
+    var level_length: TimeInterval
+    var background = SKSpriteNode()
+    var isInvulnerable: Bool = false
     
     
     init(music: String, beat: Double, bar: Double, level_multiplier: Int, size: CGSize){
@@ -38,10 +42,11 @@ class GameScene: SKScene {
         self.bar = bar
         self.level_multiplier = level_multiplier
         self.livesIndicator = SKLabelNode(text: "Lives: \(lives)")
-        
         self.pointsLabel = SKLabelNode(text: "Points: \(points) | Multiplier: \(combo_multiplier)")
         audioManager.startPlayer(messageAudioName: music)
+        level_length = audioManager.player!.duration
         super.init(size: size)
+        
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -71,16 +76,29 @@ class GameScene: SKScene {
         
         livesIndicator.position = CGPoint(x: frame.midX * 0.6 , y: frame.midY * 1.5)
         livesIndicator.fontSize = CGFloat(8)
+        livesIndicator.fontName = "Blocktopia"
         
         clickIndicator.position = CGPoint(x: frame.midX * 0.4, y: frame.midY)
-        clickIndicator.fontSize = CGFloat(8)
+        clickIndicator.name = "ClickIndicator"
+        clickIndicator.size = CGSize(width: 32, height: 32)
         
-        pointsLabel.position = CGPoint(x: frame.midX * 0.3 , y: frame.midY * 1.3)
+        pointsLabel.position = CGPoint(x: frame.midX * 0.4 , y: frame.midY * 1.3)
         pointsLabel.fontSize = CGFloat(8)
+        pointsLabel.fontName = "Blocktopia"
         
-        miniChef.position = CGPoint(x: frame.minX, y: frame.midY)
+        background.name = "Background"
+        background.texture = SKTexture(imageNamed: "bkg0")
+        background.position = CGPoint(x: frame.midX, y: frame.midY)
+        background.size = frame.size
+        background.zPosition = -2
+        
+        miniChef.position = CGPoint(x: frame.maxX * 0.08, y: frame.midY)
         miniChef.zPosition = CGFloat(1)
         miniChef.size = CGSize(width: 32, height: 32)
+        
+        flow.zPosition = -1
+        flow.size = CGSize(width: frame.maxX, height: 64)
+        flow.position = CGPoint(x: frame.midX, y: frame.midY)
         
         addChild(buttonTomato)
         addChild(buttonMozzarella)
@@ -90,7 +108,13 @@ class GameScene: SKScene {
         addChild(livesIndicator)
         addChild(pointsLabel)
         addChild(miniChef)
+        addChild(background)
+        addChild(flow)
         spawnManager(beat: beat, bar: bar)
+        Timer.scheduledTimer(withTimeInterval: level_length, repeats: false){ _ in
+            self.audioManager.isOver = true
+        }
+        
     }
     //MARK: MANAGE THE INGREDIENT NODES
     //spawns notes at a fixed interval
@@ -112,12 +136,23 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         /*self.points += 0.02
         print(points)*/
+        
+        if audioManager.isOver == true {
+            let scene: SKScene = GameOverScene(endMessage: "Level Complete!", endMusic: "The Greatest Chef", size: frame.size)
+            self.view?.presentScene(scene)
+        }
         for ingredient in ingredientArray {
             if ingredient.position.x <= 0 {
                 let i = ingredientArray.firstIndex(of: ingredient)!
                 ingredient.removeFromParent()
                 ingredientArray.remove(at: i)
-                lives -= 1
+                if isInvulnerable == false {
+                    lives -= 1
+                    isInvulnerable = true
+                    Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false){ _ in
+                        self.isInvulnerable = false
+                    }
+                }
                 combo = 0
                 livesIndicator.text = "Lives: \(lives)"
             }
@@ -136,7 +171,7 @@ class GameScene: SKScene {
         if lives <= 0 {
             livesIndicator.text = "You Lost :("
             audioManager.stopIt()
-            let scene:SKScene = GameOverScene(size: frame.size)
+            let scene:SKScene = GameOverScene(endMessage: "You Failed...", endMusic: "Lost but not defeated", size: frame.size)
             self.view!.presentScene(scene)
         }
         
@@ -169,17 +204,27 @@ class GameScene: SKScene {
     func defineSuccess(buttonPressed: String){
         miniChef.createKickAnimation()
         miniChef.run(miniChef.kickAnimation)
-        let obj = nodes(at: CGPoint(x: frame.midX * 0.4, y: frame.midY))
+        //obj is the array of nodes at the position of the left-most ingredient sprite
+        let obj = nodes(at: ingredientArray.first?.position ?? CGPoint(x: 0, y: 0))
         if obj.isEmpty == true {
             displayResult(resultText: "Miss!")
             combo = 0
-            lives -= 1
+            if isInvulnerable == false {
+                lives -= 1
+                isInvulnerable = true
+                Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false){ _ in
+                    self.isInvulnerable = false
+                }
+            }
             livesIndicator.text = "Lives: \(lives)"
             return
         }
-        if obj.first!.name == buttonPressed {
+        
+        if obj.first!.name == buttonPressed && obj[1].name == "ClickIndicator" {
+            print(obj)
             guard let i = ingredientArray.firstIndex(of: obj.first!) else { return }
             combo += 1
+            //objIt is a copy of the left-most ingredient created to run the explosion animation
             let objIt = obj.first as? IngredientSprite
             let explosion = objIt?.buildExplosion()
             obj.first?.removeFromParent()
@@ -197,7 +242,13 @@ class GameScene: SKScene {
         }
         combo = 0
         displayResult(resultText: "Miss!")
-        lives -= 1
+        if isInvulnerable == false {
+            lives -= 1
+            isInvulnerable = true
+            Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false){ _ in
+                self.isInvulnerable = false
+            }
+        }
         livesIndicator.text = "Lives: \(lives)"
         return
     }
@@ -207,6 +258,7 @@ class GameScene: SKScene {
         successDisplay = SKLabelNode(text: resultText)
         successDisplay!.fontSize = CGFloat(8)
         successDisplay!.position = CGPoint(x: frame.midX * 0.3, y: frame.midY * 1.2)
+        successDisplay?.fontName = "Blocktopia"
         addChild(successDisplay!)
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false){ _ in
             successDisplay!.removeFromParent()
