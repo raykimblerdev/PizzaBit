@@ -11,10 +11,6 @@
 		0C5EB8132949C1920092ECA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EB8122949C1920092ECA6 /* ContentView.swift */; };
 		0C5EB8182949C1930092ECA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EB8172949C1930092ECA6 /* Preview Assets.xcassets */; };
 		0C5EB8342949C1D60092ECA6 /* IngredientSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EB8292949C1D60092ECA6 /* IngredientSprite.swift */; };
-		0C5EB8352949C1D60092ECA6 /* PERFECTIONIST.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EB82C2949C1D60092ECA6 /* PERFECTIONIST.mp3 */; };
-		0C5EB8362949C1D60092ECA6 /* Pizza Easy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EB82D2949C1D60092ECA6 /* Pizza Easy.wav */; };
-		0C5EB8372949C1D60092ECA6 /* Pizza Medium.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EB82E2949C1D60092ECA6 /* Pizza Medium.wav */; };
-		0C5EB8382949C1D60092ECA6 /* PERFECTIONIST.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EB82F2949C1D60092ECA6 /* PERFECTIONIST.wav */; };
 		0C5EB8392949C1D60092ECA6 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EB8302949C1D60092ECA6 /* AudioManager.swift */; };
 		0C5EB83A2949C1D60092ECA6 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EB8312949C1D60092ECA6 /* GameOverScene.swift */; };
 		0C5EB83B2949C1D60092ECA6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5EB8322949C1D60092ECA6 /* GameScene.swift */; };
@@ -37,10 +33,6 @@
 		0C5EB8222949C1CD0092ECA6 /* Pizza Medium.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pizza Medium.wav"; sourceTree = "<group>"; };
 		0C5EB8232949C1CD0092ECA6 /* PERFECTIONIST.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PERFECTIONIST.wav; sourceTree = "<group>"; };
 		0C5EB8292949C1D60092ECA6 /* IngredientSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientSprite.swift; sourceTree = "<group>"; };
-		0C5EB82C2949C1D60092ECA6 /* PERFECTIONIST.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PERFECTIONIST.mp3; sourceTree = "<group>"; };
-		0C5EB82D2949C1D60092ECA6 /* Pizza Easy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pizza Easy.wav"; sourceTree = "<group>"; };
-		0C5EB82E2949C1D60092ECA6 /* Pizza Medium.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pizza Medium.wav"; sourceTree = "<group>"; };
-		0C5EB82F2949C1D60092ECA6 /* PERFECTIONIST.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PERFECTIONIST.wav; sourceTree = "<group>"; };
 		0C5EB8302949C1D60092ECA6 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		0C5EB8312949C1D60092ECA6 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		0C5EB8322949C1D60092ECA6 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -50,8 +42,8 @@
 		0C5EB8422949CFB10092ECA6 /* PixelatedPusab.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PixelatedPusab.ttf; sourceTree = "<group>"; };
 		0C5EB8432949CFB10092ECA6 /* Blocktopia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Blocktopia.ttf; sourceTree = "<group>"; };
 		0C5EB8442949CFB10092ECA6 /* IsWasted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IsWasted.ttf; sourceTree = "<group>"; };
-		0C5EB8482949D2610092ECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0C5EB8492949D4D10092ECA6 /* ChefSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefSprite.swift; sourceTree = "<group>"; };
+		B39213BF2949EDBE00A397A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				0C5EB84B2949D60C0092ECA6 /* Sprites */,
-				0C5EB8482949D2610092ECA6 /* Info.plist */,
 				0C5EB8102949C1920092ECA6 /* PizzaBitApp.swift */,
 				0C5EB83D2949C1DE0092ECA6 /* IngredientModel.swift */,
+				B39213BF2949EDBE00A397A2 /* Info.plist */,
 				0C5EB8122949C1920092ECA6 /* ContentView.swift */,
 				0C5EB83F2949C2590092ECA6 /* Assets.xcassets */,
 				0C5EB8282949C1D60092ECA6 /* Scenes */,
@@ -108,7 +100,6 @@
 		0C5EB81E2949C1CD0092ECA6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0C5EB82B2949C1D60092ECA6 /* OST */,
 				0C5EB8412949CFB10092ECA6 /* Fonts */,
 				0C5EB81F2949C1CD0092ECA6 /* OST */,
 			);
@@ -135,18 +126,6 @@
 				0C5EB8332949C1D60092ECA6 /* MenuScene.swift */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		0C5EB82B2949C1D60092ECA6 /* OST */ = {
-			isa = PBXGroup;
-			children = (
-				0C5EB82C2949C1D60092ECA6 /* PERFECTIONIST.mp3 */,
-				0C5EB82D2949C1D60092ECA6 /* Pizza Easy.wav */,
-				0C5EB82E2949C1D60092ECA6 /* Pizza Medium.wav */,
-				0C5EB82F2949C1D60092ECA6 /* PERFECTIONIST.wav */,
-			);
-			name = OST;
-			path = ../Scenes/Resources/OST;
 			sourceTree = "<group>";
 		};
 		0C5EB8412949CFB10092ECA6 /* Fonts */ = {
@@ -226,14 +205,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C5EB8382949C1D60092ECA6 /* PERFECTIONIST.wav in Resources */,
-				0C5EB8352949C1D60092ECA6 /* PERFECTIONIST.mp3 in Resources */,
 				0C5EB8462949CFB10092ECA6 /* Blocktopia.ttf in Resources */,
 				0C5EB8402949C2590092ECA6 /* Assets.xcassets in Resources */,
 				0C5EB8472949CFB10092ECA6 /* IsWasted.ttf in Resources */,
 				0C5EB8452949CFB10092ECA6 /* PixelatedPusab.ttf in Resources */,
-				0C5EB8372949C1D60092ECA6 /* Pizza Medium.wav in Resources */,
-				0C5EB8362949C1D60092ECA6 /* Pizza Easy.wav in Resources */,
 				0C5EB8182949C1930092ECA6 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +359,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PizzaBit/Preview Content\"";
 				DEVELOPMENT_TEAM = RFJHQ283YQ;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PizzaBit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -417,7 +392,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PizzaBit/Preview Content\"";
 				DEVELOPMENT_TEAM = RFJHQ283YQ;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PizzaBit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
