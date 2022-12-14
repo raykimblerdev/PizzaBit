@@ -14,16 +14,22 @@ class MenuScene: SKScene {
     var easyButton = SKLabelNode()
     var mediumButton = SKLabelNode()
     var hardButton = SKLabelNode()
-    
-
+    var chefMenu = ChefSprite()
+    var background = SKSpriteNode()
     
     override func didMove(to view: SKView) {
+        
         easyButton = SKLabelNode(text: "Easy")
         easyButton.name = "Easy"
         mediumButton = SKLabelNode(text: "Medium")
         mediumButton.name = "Medium"
         hardButton = SKLabelNode(text: "Hard")
         hardButton.name = "Hard"
+        
+        
+        
+        chefMenu.position = CGPoint(x: frame.midX, y: frame.midY)
+        
         
         easyButton.position = CGPointMake(frame.midX, frame.midY)
         mediumButton.position = CGPointMake(frame.midX, frame.midY-25)
@@ -32,6 +38,7 @@ class MenuScene: SKScene {
         addChild(easyButton)
         addChild(mediumButton)
         addChild(hardButton)
+        //addChild(chefMenu)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

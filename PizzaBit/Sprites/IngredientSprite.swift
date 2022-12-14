@@ -13,14 +13,14 @@ class IngredientSprite: SKSpriteNode {
     var ingredientName: String { ingredientKind.name }
     var ingredientNameExplosion: String = ""
     private var ingredientFrames: [SKTexture] = []
-    let defaultSize: CGSize = CGSize(width: 32, height: 32)
+    let spriteSize = CGSize(width: 32, height: 32)
     
 
     
     init(ingredientKind: Ingredient.Kind){
         //specify the ingredient and animate the sprite
         self.ingredientKind = ingredientKind
-        super.init(texture: nil, color: .clear, size: defaultSize)
+        super.init(texture: nil, color: .clear, size: spriteSize)
         buildIngredient()
         animateIngredient()
         self.ingredientNameExplosion = self.ingredientName + "-explosion"
@@ -47,7 +47,7 @@ class IngredientSprite: SKSpriteNode {
         self.position = CGPoint(x: frame.midX, y: frame.midY)
     }
     func animateIngredient() {
-        let animation = SKAction.animate(with: ingredientFrames, timePerFrame: ingredientKind.timePerFrame)
+        let animation = SKAction.animate(with: ingredientFrames, timePerFrame: 0.21)
         self.run(SKAction.repeatForever(animation), withKey: "\(ingredientKind.rawValue)key")
     }
 
@@ -65,9 +65,10 @@ class IngredientSprite: SKSpriteNode {
         let ingredientFramesExplosion = ingredientBufferFrames
         
         let firstFrameTexture = ingredientFramesExplosion[1]
+        
         self.texture = firstFrameTexture
         self.position = CGPoint(x: frame.midX, y: frame.midY)
-        let animation = SKAction.animate(with: ingredientFramesExplosion, timePerFrame: ingredientKind.timePerFrame)
+        let animation = SKAction.animate(with: ingredientFramesExplosion, timePerFrame: 0.05)
         return animation
     }
     

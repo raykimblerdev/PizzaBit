@@ -23,15 +23,18 @@ struct Ingredient: Identifiable {
         
         var name: String { rawValue.capitalized }
         var timePerFrame: Double {
-            switch self {
-            case .tomato:
-                return 0.08
-            case .basil:
-                return 0.04
-            case .oil:
-                return 0.21
-            case .mozzarella:
-                return 0.15
+            get {
+                switch self {
+                case .tomato:
+                    return 0.21
+                case .basil:
+                    return 0.21
+                case .oil:
+                    return 0.21
+                case .mozzarella:
+                    return 0.21
+                }
+            
             }
         }
         

@@ -12,6 +12,7 @@ class GameScene: SKScene {
     
     
     //MARK: DEFINE BUTTONS AND OTHER NODES IN THE SCENE
+    var miniChef = ChefSprite()
     var buttonTomato = SKSpriteNode(imageNamed: "0tomato")
     var buttonMozzarella = SKSpriteNode(imageNamed: "0mozzarella")
     var buttonBasil = SKSpriteNode(imageNamed: "0basil")
@@ -37,6 +38,7 @@ class GameScene: SKScene {
         self.bar = bar
         self.level_multiplier = level_multiplier
         self.livesIndicator = SKLabelNode(text: "Lives: \(lives)")
+        
         self.pointsLabel = SKLabelNode(text: "Points: \(points) | Multiplier: \(combo_multiplier)")
         audioManager.startPlayer(messageAudioName: music)
         super.init(size: size)
@@ -76,6 +78,10 @@ class GameScene: SKScene {
         pointsLabel.position = CGPoint(x: frame.midX * 0.3 , y: frame.midY * 1.3)
         pointsLabel.fontSize = CGFloat(8)
         
+        miniChef.position = CGPoint(x: frame.minX, y: frame.midY)
+        miniChef.zPosition = CGFloat(1)
+        miniChef.size = CGSize(width: 32, height: 32)
+        
         addChild(buttonTomato)
         addChild(buttonMozzarella)
         addChild(buttonBasil)
@@ -83,6 +89,7 @@ class GameScene: SKScene {
         addChild(clickIndicator)
         addChild(livesIndicator)
         addChild(pointsLabel)
+        addChild(miniChef)
         spawnManager(beat: beat, bar: bar)
     }
     //MARK: MANAGE THE INGREDIENT NODES
@@ -160,6 +167,8 @@ class GameScene: SKScene {
     
     //checks if the correct button was pressed at the right moment
     func defineSuccess(buttonPressed: String){
+        miniChef.createKickAnimation()
+        miniChef.run(miniChef.kickAnimation)
         let obj = nodes(at: CGPoint(x: frame.midX * 0.4, y: frame.midY))
         if obj.isEmpty == true {
             displayResult(resultText: "Miss!")
