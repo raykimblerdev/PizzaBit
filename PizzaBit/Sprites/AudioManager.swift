@@ -33,7 +33,7 @@ import AVKit
        do{
            
            // So the sound keeps playing in background and keeps playing in silent mode
-           try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord,
+           try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback,
                                    mode: .default)
            
            try AVAudioSession.sharedInstance().setActive(true)
