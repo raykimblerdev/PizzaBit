@@ -70,7 +70,7 @@ class MenuScene: SKScene {
             case "Hard":
                 audioManager.stopIt()
                 print("Hard Pressed")
-                let scene:SKScene = GameScene(music: "PERFECTIONIST", beat: [0.4], bar: 1.6, level_multiplier: 3, size: CGSize(width: frame.maxX, height: frame.maxY))
+                let scene:SKScene = GameScene(music: "PERFECTIONIST", beat: [0.4 * 2], bar: 1.6, level_multiplier: 3, size: CGSize(width: frame.maxX, height: frame.maxY))
                 self.view?.presentScene(scene)
             default:
                 print("nothing")

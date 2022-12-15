@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var scene: SKScene {
         let scene = MenuScene()
-        scene.size = CGSize(width: 216, height: 216)
+        scene.size = CGSize(width: 256, height: 144)
         scene.scaleMode = .fill
         return scene
     }

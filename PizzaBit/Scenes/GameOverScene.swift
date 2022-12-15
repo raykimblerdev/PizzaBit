@@ -9,6 +9,7 @@ import SpriteKit
 
 class GameOverScene: SKScene {
     
+    var score: Int
     
     var endMessage: String
     var endMusic: String
@@ -17,7 +18,8 @@ class GameOverScene: SKScene {
     var background = SKSpriteNode(imageNamed: "bkg0")
     var audioManager = AudioManager()
     
-    init(endMessage: String, endMusic: String, size: CGSize) {
+    init(score: Int, endMessage: String, endMusic: String, size: CGSize) {
+        self.score = score
         self.endMessage = endMessage
         self.endMusic = endMusic
         self.audioManager.startPlayer(messageAudioName: endMusic)
@@ -29,7 +31,7 @@ class GameOverScene: SKScene {
     override func didMove(to view: SKView) {
         
         resultLabel.position = CGPoint(x: frame.midX, y: frame.midY * 1.5)
-        resultLabel.text = endMessage
+        resultLabel.text = endMessage + "\n Your Score: \(score)"
         resultLabel.fontSize = 8
         resultLabel.fontName = "Blocktopia"
         

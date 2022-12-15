@@ -37,7 +37,7 @@ class ChefSprite: SKSpriteNode {
         }
         let firstFrameTexture = ingredientBufferFrames[1]
         self.texture = firstFrameTexture
-        kickAnimation = SKAction.animate(with: ingredientBufferFrames, timePerFrame: 0.1)
+        kickAnimation = SKAction.animate(with: ingredientBufferFrames, timePerFrame: 0.05)
        
     }
     

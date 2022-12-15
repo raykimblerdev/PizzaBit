@@ -1,0 +1,50 @@
+{
+    "Version": 1.0,
+    "Metadata":
+    {
+        "Project" : "PizzaBit",
+        "Created" : "06 December 2022",
+        "Description" : "Effect for the ingredient hit on time."
+    },
+    "Pattern":
+    [
+        {
+            "Event":
+            {
+                "Time": 0.0,
+                "EventType": "HapticTransient",
+                "EventParameters":
+                [
+                    { "ParameterID": "HapticIntensity", "ParameterValue": 0.9 },
+                    { "ParameterID": "HapticSharpness", "ParameterValue": 0.3 }
+                ]
+            }
+        },
+        {
+            "Event":
+            {
+                "Time": 0.015,
+                "EventType": "HapticContinuous",
+                "EventDuration": 0.25,
+                "EventParameters":
+                [
+                    { "ParameterID": "HapticIntensity", "ParameterValue": 0.3 },
+                    { "ParameterID": "HapticSharpness", "ParameterValue": 0.5 }
+                ]
+            }
+        },
+        {
+            "ParameterCurve":
+            {
+                "ParameterID": "HapticIntensityControl",
+                "Time": 0.015,
+                "ParameterCurveControlPoints":
+                [
+                    { "Time": 0, "ParameterValue": 1 },
+                    { "Time": 0.1, "ParameterValue": 0.5 }
+                ]
+
+            }
+        }
+    ]
+}
