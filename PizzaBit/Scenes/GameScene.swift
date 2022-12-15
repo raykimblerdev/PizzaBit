@@ -29,14 +29,14 @@ class GameScene: SKScene {
     var points: Int = 0
     var music: String
     var lives: Int = 3
-    var beat: Double
+    var beat: [Double]
     var bar: Double
     var level_length: TimeInterval
     var background = SKSpriteNode()
     var isInvulnerable: Bool = false
     
     
-    init(music: String, beat: Double, bar: Double, level_multiplier: Int, size: CGSize){
+    init(music: String, beat: [Double], bar: Double, level_multiplier: Int, size: CGSize){
         self.music = music
         self.beat = beat
         self.bar = bar
@@ -60,29 +60,29 @@ class GameScene: SKScene {
         
         buttonTomato.position = CGPoint(x: frame.midX * 0.3, y: buttonDefaultCoordinateY)
         buttonTomato.name = "TOMATO"
-        buttonTomato.size = CGSize(width: 32, height: 32)
+        buttonTomato.size = CGSize(width: 64, height: 64)
         
-        buttonMozzarella.position = CGPoint(x: frame.midX * 0.6, y: buttonDefaultCoordinateY)
+        buttonMozzarella.position = CGPoint(x: frame.midX * 0.8, y: buttonDefaultCoordinateY)
         buttonMozzarella.name = "MOZZARELLA"
-        buttonMozzarella.size = CGSize(width: 32, height: 32)
+        buttonMozzarella.size = CGSize(width: 64, height: 64)
         
         buttonBasil.position = CGPoint(x: frame.midX * 1.2, y: buttonDefaultCoordinateY)
         buttonBasil.name = "BASIL"
-        buttonBasil.size = CGSize(width: 32, height: 32)
+        buttonBasil.size = CGSize(width: 64, height: 64)
         
-        buttonOil.position = CGPoint(x: frame.midX * 1.6, y: buttonDefaultCoordinateY)
+        buttonOil.position = CGPoint(x: frame.midX * 1.7, y: buttonDefaultCoordinateY)
         buttonOil.name = "OIL"
-        buttonOil.size = CGSize(width: 32, height: 32)
+        buttonOil.size = CGSize(width: 64, height: 64)
         
-        livesIndicator.position = CGPoint(x: frame.midX * 0.6 , y: frame.midY * 1.5)
+        livesIndicator.position = CGPoint(x: frame.midX * 0.4 , y: frame.midY * 1.8)
         livesIndicator.fontSize = CGFloat(8)
         livesIndicator.fontName = "Blocktopia"
         
-        clickIndicator.position = CGPoint(x: frame.midX * 0.4, y: frame.midY)
+        clickIndicator.position = CGPoint(x: frame.midX * 0.5, y: frame.midY)
         clickIndicator.name = "ClickIndicator"
         clickIndicator.size = CGSize(width: 32, height: 32)
         
-        pointsLabel.position = CGPoint(x: frame.midX * 0.4 , y: frame.midY * 1.3)
+        pointsLabel.position = CGPoint(x: frame.midX * 0.5 , y: frame.midY * 1.6)
         pointsLabel.fontSize = CGFloat(8)
         pointsLabel.fontName = "Blocktopia"
         
@@ -92,7 +92,7 @@ class GameScene: SKScene {
         background.size = frame.size
         background.zPosition = -2
         
-        miniChef.position = CGPoint(x: frame.maxX * 0.08, y: frame.midY)
+        miniChef.position = CGPoint(x: frame.maxX * 0.13, y: frame.midY)
         miniChef.zPosition = CGFloat(1)
         miniChef.size = CGSize(width: 32, height: 32)
         
@@ -118,9 +118,9 @@ class GameScene: SKScene {
     }
     //MARK: MANAGE THE INGREDIENT NODES
     //spawns notes at a fixed interval
-    func spawnManager(beat: Double, bar: Double){
+    func spawnManager(beat: [Double], bar: Double){
         let move = SKAction.moveTo(x: 0, duration: bar)
-        let timeIntervals: [Double] = [beat]
+        let timeIntervals: [Double] = beat
         let notes: [Ingredient.Kind] = [.oil, .mozzarella, .tomato, .basil]
         Timer.scheduledTimer(withTimeInterval: timeIntervals.randomElement()!, repeats: true){
             (_) in
@@ -131,6 +131,9 @@ class GameScene: SKScene {
             self.addChild(ingredient)
             self.ingredientArray.append(ingredient)
         }
+        
+        
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -257,7 +260,7 @@ class GameScene: SKScene {
         var successDisplay: SKLabelNode?
         successDisplay = SKLabelNode(text: resultText)
         successDisplay!.fontSize = CGFloat(8)
-        successDisplay!.position = CGPoint(x: frame.midX * 0.3, y: frame.midY * 1.2)
+        successDisplay!.position = CGPoint(x: frame.midX * 0.3, y: frame.midY * 1.4)
         successDisplay?.fontName = "Blocktopia"
         addChild(successDisplay!)
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false){ _ in

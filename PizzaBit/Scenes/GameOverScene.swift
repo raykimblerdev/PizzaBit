@@ -35,7 +35,7 @@ class GameOverScene: SKScene {
         
         menuLabel.position = CGPoint(x: frame.midX, y: frame.midY)
         menuLabel.text = "Go back to menu"
-        menuLabel.fontSize = 8
+        menuLabel.fontSize = 14
         menuLabel.fontName = "Blocktopia"
         menuLabel.name = "MENU"
         

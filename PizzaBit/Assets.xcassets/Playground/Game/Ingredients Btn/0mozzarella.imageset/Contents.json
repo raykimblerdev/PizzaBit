@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Mozzarella.png",
-      "idiom" : "universal"
+      "filename" : "MozzarellaButton.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
